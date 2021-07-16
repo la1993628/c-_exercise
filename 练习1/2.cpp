@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 template<class T>
 T count(T* a,T& value,T len)
@@ -78,6 +79,9 @@ int main()
 //	iota(a,10,1);
 //	cout << a[2] << endl;
 //	cout << is_sorted(a,10) << endl;
-	cout << mismatch(a, b, 10) << endl;
+//	cout << mismatch(a, b, 10) << endl;
+	string test = "abcd";
+	string test_b = test.substr(0,2);
+	cout << test_b << endl;
 	return 0;
 }
