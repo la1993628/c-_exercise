@@ -16,13 +16,12 @@ T count(T* a,T& value,T len)
 	return value_time;
 }
 template<class T>
-T* fill(T* a,T& value,T len)
+void fill(T* a,T& value,T len)
 {
 	for( int i = 0; i < len; i++)
 	{
 		a[i] = value;
 	}
-	return a;
 }
 
 template <class T>
@@ -36,6 +35,37 @@ T inner_product(T* a, T* b , T len)
 	return ans;
 }
 
+template <class T>
+void iota(T *a, T len, T value)
+{
+	for( int i = 0; i < len; i++)
+	{
+		a[i] = value + i;
+	}
+}
+
+template<class T>
+bool is_sorted(T *a, T len)
+{
+	for( int i = 0; i < len-1 ; i++)
+	{
+		if( a[i] >= a[i+1]) return false;
+	}
+	return true;
+}
+
+template <class T>
+T mismatch(T* a, T* b , T len)
+{
+	for( int i = 0; i < len ; i++)
+	{
+		if ( a[i] != b[i])
+		{
+			return i;
+		}
+	}
+}
+
 int main()
 {
 	int a[10] = {1,2,3,4,5,5,5,6,7,9};
@@ -44,7 +74,10 @@ int main()
 //	int result = count(a, value, 10);
 //	fill(a, value, 10);
 //	cout << a[0] << endl;
-	cout << inner_product(a,b,10) << endl;
-
+//	cout << inner_product(a,b,10) << endl;
+//	iota(a,10,1);
+//	cout << a[2] << endl;
+//	cout << is_sorted(a,10) << endl;
+	cout << mismatch(a, b, 10) << endl;
 	return 0;
 }
